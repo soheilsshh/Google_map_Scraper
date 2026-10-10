@@ -34,7 +34,8 @@ try:
     scrollable_div = driver.find_element(By.XPATH, "//div[@role='feed']")
     
     # 2. Scroll (do it 5 times; you can increase it to 10 or 20 to gather hundreds of results)
-    for i in range(5):
+    ScrollTime = int(input("Enter the Scroll Time :"))
+    for i in range(ScrollTime):
         driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", scrollable_div)
         print(f"🔄 Scroll {i+1}...")
         time.sleep(3)  # Waiting here is very important
